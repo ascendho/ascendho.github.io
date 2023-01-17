@@ -6,6 +6,12 @@ body {
     -webkit-font-smoothing: antialiased;
     padding: 5vh 10vw;
     color: #121314;
+    /*background-color: #6f8000;*/
+}
+
+.section {
+    font-weight: 500;
+    font-size: 2.2em;
 }
 
 h1 {
@@ -19,6 +25,30 @@ p {
     font-weight: 300;
     line-height: 1.4;
     max-width: 28em;
+}
+
+.fox{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 15rem;
+    height: 15rem;
+}
+
+.intro {
+    display: flex;
+    /*background-color: red;*/
+    align-items: center;
+    /*gap: 16px;*/
+    /*justify-content: space-between;*/
+    text-align: center;
+    /*padding-left: 50px ;*/
+
+}
+
+.doing {
+    font-weight: 200;
+    font-size: 1.8em;
+    list-style: none;
 }
 
 a {
@@ -44,8 +74,17 @@ a:hover:after {
     top: 0%;
 }
 
-li{
+li {
     margin-top: 20px;
 }
 
 
+.email, .github {
+    font-weight: 200;
+    font-size: 1.8em;
+    list-style: none
+}
+
+.email {
+    margin-bottom: 20px;
+}
