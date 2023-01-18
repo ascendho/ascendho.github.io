@@ -32,17 +32,30 @@ p {
     object-fit: cover;
     width: 15rem;
     height: 15rem;
+    margin-left: 80px;
+}
+
+.description{
+    /*font-family:'Lato';*/
+    /*line-height: 50px;*/
 }
 
 .intro {
     display: flex;
     /*background-color: red;*/
     align-items: center;
-    /*gap: 16px;*/
+    gap: 100px;
     /*justify-content: space-between;*/
-    text-align: center;
-    /*padding-left: 50px ;*/
+    /*padding-right: 150px ;*/
 
+}
+
+.bio{
+    font-family: "Times New Roman";
+    font-style: oblique;
+    text-align: left;
+    /*background-color: red;*/
+    /*margin:50px auto;*/
 }
 
 .doing {
@@ -87,4 +100,11 @@ li {
 
 .email {
     margin-bottom: 20px;
+}
+
+.template{
+    font-family: "Times New Roman";
+    font-size: 22px;
+    /*background-color: red;*/
+    padding-left: 950px;
 }
