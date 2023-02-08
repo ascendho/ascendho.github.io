@@ -24,39 +24,39 @@ p {
     font-size: 1.6em;
     font-weight: 300;
     line-height: 1.4;
-    max-width: 28em;
+    max-width: 40em;
 }
 
-.fox{
-    border-radius: 50%;
-    object-fit: cover;
-    width: 15rem;
-    height: 15rem;
-    margin-left: 80px;
-}
+/*.fox {*/
+/*    border-radius: 50%;*/
+/*    object-fit: cover;*/
+/*    width: 15rem;*/
+/*    height: 15rem;*/
+/*    margin-left: 80px;*/
+/*}*/
 
-.description{
-    /*font-family:'Lato';*/
-    /*line-height: 50px;*/
-}
+/*.description {*/
+/*font-family:'Lato';*/
+/*line-height: 50px;*/
+/*}*/
 
-.intro {
-    display: flex;
-    /*background-color: red;*/
-    align-items: center;
-    gap: 100px;
-    /*justify-content: space-between;*/
-    /*padding-right: 150px ;*/
+/*.intro {*/
+/*    display: flex;*/
+/*    !*background-color: red;*!*/
+/*    align-items: center;*/
+/*    gap: 100px;*/
+/*    !*justify-content: space-between;*!*/
+/*    !*padding-right: 150px ;*!*/
 
-}
+/*}*/
 
-.bio{
-    font-family: "Times New Roman";
-    font-style: oblique;
-    text-align: left;
-    /*background-color: red;*/
-    /*margin:50px auto;*/
-}
+/*.bio {*/
+/*    font-family: "Times New Roman";*/
+/*    font-style: oblique;*/
+/*    text-align: left;*/
+/*    !*background-color: red;*!*/
+/*    !*margin:50px auto;*!*/
+/*}*/
 
 .doing {
     font-weight: 200;
@@ -92,17 +92,16 @@ li {
 }
 
 
-.email, .github {
+.email, .github, .blog {
     font-weight: 200;
     font-size: 1.8em;
-    list-style: none
-}
-
-.email {
+    list-style: none;
     margin-bottom: 20px;
+
 }
 
-.template{
+
+.template {
     font-family: "sans-serif";
     font-size: 20px;
     /*background-color: red;*/
