@@ -92,7 +92,7 @@ li {
 }
 
 
-.email, .github, .blog {
+.email, .github, .blog, .stackoverflow {
     font-weight: 200;
     font-size: 1.8em;
     list-style: none;
