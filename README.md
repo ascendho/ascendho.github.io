@@ -1,2 +1,2 @@
-[Personal Website](https://ascendho.github.io/)
+[个人网站](https://ascendho.github.io/)，借助`github pages`部署。
 
