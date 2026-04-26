@@ -28,10 +28,10 @@ export const navigation = [
 export const hero = {
   name: "Ascend Ho",
   handle: "@ascendho",
-  status: "寻找实习机会",
-  title: "正在成长中的 C++ 与 LLM 应用开发者。",
+  status: "正在寻找实习机会",
+  title: "成长中的 Agent 开发者。",
   summary:
-    "我专注于 C++、系统基础与 AI 应用工程，并持续把学习沉淀为项目、证书和更完整的作品集。",
+    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。页面右上角附有我的个人简历，若有兴趣，可邮件联系。",
   primaryCta: { label: "查看项目", href: "#projects" },
   secondaryCta: { label: "联系我", href: "#contact" },
   resumeHref,
@@ -39,28 +39,28 @@ export const hero = {
 
 export const projects = [
   {
-    title: "主打项目",
-    status: "即将补充演示",
+    title: "VisionDoc",
     description:
-      "这里预留给当前最能代表我方向的一项作品，用来展示问题定义、实现过程和最终交付。",
-    tags: ["C++", "LLM", "演示"],
-    meta: ["后续会用真实项目内容替换这里的占位描述。", "源码链接和演示入口也会补到这里。"],
+      "基于 ColPali + MUVERA + Qdrant 的多模态视觉文档问答系统，支持 PDF、图片及纯文本格式文件。",
+    tags: ["ColPali", "MUVERA", "Qdrant", "Multimodal", "RAG"],
+    repoHref: "#",
+    demoHref: "#",
   },
   {
-    title: "系统方向项目",
-    status: "进行中",
+    title: "E-Snap",
     description:
-      "这里用于展示更偏底层或系统方向的工作，重点会放在实现取舍和技术深度上。",
-    tags: ["系统", "架构", "C++"],
-    meta: ["这是一个更强调工程实现的项目位。", "后续会补充说明文档和技术笔记。"],
+      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，大幅提高并发数并显著降低延迟和大模型调用成本。",
+    tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
+    repoHref: "https://github.com/ascendho/E-Snap",
+    demoHref: "#",
   },
   {
-    title: "实验项目位",
-    status: "预留中",
+    title: "Wordle",
     description:
-      "这里用来承接持续中的小实验、原型或快速迭代，让整个作品集保持更新。",
-    tags: ["迭代", "原型", "演示"],
-    meta: ["适合承载周期较短、体量较小的想法。", "如果内容成熟，也可以升级成完整案例。"],
+      "以 Qwen 2.5 7B Instruct 为基座模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
+    tags: ["Qwen", "SFT", "GRPO", "Lora","Fine-tuning"],
+    repoHref: "https://github.com/ascendho/Wordle",
+    demoHref: "#",
   },
 ] as const;
 
@@ -123,9 +123,9 @@ export const certificateGroups = [
 ] as const;
 
 export const contact = {
-  title: "准备进入下一次对话。",
+  title: "准备进入下一次对话",
   description:
-    "如果你想更快了解我的方向、项目和可验证的学习记录，可以先看简历，或者直接给我发邮件。",
+    "如果你想更详细地了解我的方向、项目和可验证的学习记录，可以先查看简历，或者直接给我发送邮件。",
   email: "ascendho@outlook.com",
   github: "https://github.com/ascendho",
   resumeHref,

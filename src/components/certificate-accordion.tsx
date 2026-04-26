@@ -38,7 +38,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
               isOpen ? "shadow-[0_30px_80px_rgba(54,90,62,0.12)]" : ""
             }`}
           >
-            <h3>
+            <h3 className="font-normal tracking-normal">
               <button
                 id={buttonId}
                 type="button"
@@ -49,10 +49,10 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                     current === group.platform ? "" : group.platform,
                   )
                 }
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-white/52 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-inset sm:px-8"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-normal transition-colors hover:bg-white/52 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-inset sm:px-8 sm:py-6"
               >
-                <div>
-                  <span className="block text-2xl font-semibold text-[var(--fg)] sm:text-3xl">
+                <div className="space-y-1.5">
+                  <span className="display-serif block text-[1.8rem] font-normal leading-[0.96] tracking-[-0.045em] text-[var(--fg)] sm:text-[2.45rem]">
                     {group.platform}
                   </span>
                   <span className="mt-1 block text-sm text-[var(--muted)]">
@@ -102,7 +102,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                     >
                       <div className="flex items-start gap-4">
                         <span className="mt-2 h-2.5 w-2.5 flex-none rounded-full bg-[var(--accent)]" />
-                        <h4 className="text-base font-semibold tracking-tight text-[var(--fg)] sm:text-lg">
+                        <h4 className="text-[1.02rem] font-normal leading-7 tracking-[-0.02em] text-[var(--fg)] sm:text-[1.14rem]">
                           {item.title}
                         </h4>
                       </div>
@@ -114,7 +114,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                           rel="noopener noreferrer"
                           className="inline-flex rounded-full border border-[var(--line)] bg-white/78 px-4 py-2 text-sm text-[var(--fg)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
                         >
-                          查看 PDF
+                          查看证书
                         </a>
                         <a
                           href={item.verify}
@@ -122,7 +122,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                           rel="noopener noreferrer"
                           className="inline-flex rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
                         >
-                          官方验证
+                          在线验证
                         </a>
                       </div>
                     </article>

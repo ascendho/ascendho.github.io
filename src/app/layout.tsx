@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { ExternalLinkIcon, GitHubIcon, MailIcon } from "@/components/ui-icons";
@@ -6,10 +7,17 @@ import { contact, navigation, withBasePath } from "@/lib/site-data";
 
 import "./globals.css";
 
+const siteSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Ascend Ho | 个人主页",
   description:
-    "Ascend Ho 的单页作品集，聚焦 C++、系统基础、证书记录与 LLM 应用方向。",
+    "Ascend Ho 的单页作品集，聚焦大模型应用和 Agent 开发方向。",
   icons: {
     icon: withBasePath("/favicon.svg"),
     shortcut: withBasePath("/favicon.svg"),
@@ -18,12 +26,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="zh-CN" className="scroll-smooth">
+    <html lang="zh-CN" className={`${siteSans.variable} scroll-smooth`}>
       <body className="min-h-screen bg-[var(--page-bg)] text-[var(--fg)] antialiased">
         <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line-soft)] bg-[var(--header-surface)] backdrop-blur-xl">
           <div className="mx-auto max-w-6xl">
-            <nav className="flex h-16 items-center justify-end px-6">
-              <div className="hidden items-center gap-2 md:flex md:pl-16 lg:pl-24">
+            <div className="flex items-center justify-between px-5 py-3.5 sm:px-6 md:py-4">
+              <a
+                href="#top"
+                className="site-mono inline-flex items-center text-[11px] font-semibold tracking-[0.26em] text-[var(--soft)] uppercase transition-colors hover:text-[var(--fg)]"
+              >
+                ascendho
+              </a>
+
+              <nav className="hidden items-center gap-2 md:flex md:pl-16 lg:pl-24">
                 {navigation.map((item) => (
                   <a
                     key={item.href}
@@ -36,18 +51,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     {item.external ? <ExternalLinkIcon className="h-3 w-3" /> : null}
                   </a>
                 ))}
-              </div>
-            </nav>
+              </nav>
+            </div>
 
-            <div className="border-t border-[var(--line-soft)] px-4 py-3 md:hidden">
-              <div className="flex justify-end gap-2 overflow-x-auto pb-1">
+            <div className="border-t border-[var(--line-soft)] px-5 py-2.5 sm:px-6 md:hidden">
+              <div className="flex gap-2 overflow-x-auto pb-1">
                 {navigation.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-1 shrink-0 rounded-full border border-[var(--line)] bg-white/80 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
+                    className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[var(--line)] bg-white/80 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
                   >
                     {item.label}
                     {item.external ? <ExternalLinkIcon className="h-2.5 w-2.5" /> : null}
@@ -58,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main id="top" className="pt-28 md:pt-16">
+        <main id="top" className="pt-24 md:pt-20">
           {children}
         </main>
 

@@ -79,3 +79,21 @@ export function ExternalLinkIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function PlayIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.9"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect x="3.75" y="5.25" width="16.5" height="13.5" rx="3" />
+      <path d="m10 9.2 5 2.8-5 2.8Z" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
