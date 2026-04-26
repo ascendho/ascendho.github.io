@@ -15,9 +15,9 @@ const siteSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Ascend Ho | 个人主页",
+  title: "Homepage - Ascend Ho",
   description:
-    "Ascend Ho 的单页作品集，聚焦大模型应用和 Agent 开发方向。",
+    "Ascend Ho 的个人求职网页，聚焦大模型应用和 Agent 开发方向。",
   icons: {
     icon: withBasePath("/favicon.svg"),
     shortcut: withBasePath("/favicon.svg"),
@@ -33,9 +33,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="flex items-center justify-between px-5 py-3.5 sm:px-6 md:py-4">
               <a
                 href="#top"
-                className="site-mono inline-flex items-center text-[11px] font-semibold tracking-[0.26em] text-[var(--soft)] uppercase transition-colors hover:text-[var(--fg)]"
+                aria-label="返回顶部"
+                className="site-mono header-home-link inline-flex items-center justify-center text-[0.9rem] font-medium tracking-[0.02em] text-[var(--accent-strong)] transition-colors duration-200 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]"
               >
-                ascendho
+                Portfolio
               </a>
 
               <nav className="hidden items-center gap-2 md:flex md:pl-16 lg:pl-24">
@@ -45,7 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm text-[var(--muted)] transition-colors hover:bg-white/80 hover:text-[var(--fg)]"
+                    className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-base text-[var(--muted)] transition-colors hover:bg-white/80 hover:text-[var(--fg)]"
                   >
                     {item.label}
                     {item.external ? <ExternalLinkIcon className="h-3 w-3" /> : null}
@@ -62,7 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[var(--line)] bg-white/80 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
+                    className="inline-flex shrink-0 items-center gap-1 rounded-full border border-[var(--line)] bg-white/80 px-3.5 py-1.5 text-sm text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
                   >
                     {item.label}
                     {item.external ? <ExternalLinkIcon className="h-2.5 w-2.5" /> : null}

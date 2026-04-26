@@ -97,3 +97,20 @@ export function PlayIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+export function BrandMarkIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M24 9.25 10 20.4v15.1a3.75 3.75 0 0 0 3.75 3.75h20.5A3.75 3.75 0 0 0 38 35.5V20.4L24 9.25Z"
+        fill="#4f8b63"
+      />
+      <path
+        d="M8.6 20.85a1.75 1.75 0 0 1 .26-2.45l14.05-11.2a1.75 1.75 0 0 1 2.18 0l14.05 11.2a1.75 1.75 0 1 1-2.18 2.74L24 10.7 10.78 21.14a1.75 1.75 0 0 1-2.18-.29Z"
+        fill="#386748"
+      />
+      <rect x="15.5" y="18.25" width="17" height="4.1" rx="2.05" fill="#d7eadb" />
+      <rect x="20.35" y="26.25" width="7.3" height="13" rx="2.2" fill="#20332a" />
+    </svg>
+  );
+}

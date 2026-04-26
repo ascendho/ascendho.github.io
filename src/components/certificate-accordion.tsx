@@ -52,7 +52,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                 className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-normal transition-colors hover:bg-white/52 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-inset sm:px-8 sm:py-6"
               >
                 <div className="space-y-1.5">
-                  <span className="display-serif block text-[1.8rem] font-normal leading-[0.96] tracking-[-0.045em] text-[var(--fg)] sm:text-[2.45rem]">
+                  <span className="display-serif block text-[1.48rem] font-normal leading-[1] tracking-[-0.04em] text-[var(--fg)] sm:text-[1.96rem]">
                     {group.platform}
                   </span>
                   <span className="mt-1 block text-sm text-[var(--muted)]">

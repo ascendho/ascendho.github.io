@@ -48,10 +48,10 @@ function ScrollCue() {
     <a
       href="#projects"
       aria-label="滚动到项目部分"
-      className="mt-14 inline-flex items-center text-[var(--soft)] transition-transform duration-200 hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)] sm:mt-20"
+      className="scroll-cue mt-14 inline-flex items-center text-[var(--soft)] transition-transform duration-200 hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)] sm:mt-20"
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line)] bg-white/82 text-[var(--accent)] shadow-[0_16px_38px_rgba(56,95,69,0.08)]">
-        <ArrowDownIcon className="h-5 w-5" />
+      <span className="scroll-cue-button inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line)] bg-white/82 text-[var(--accent)] shadow-[0_16px_38px_rgba(56,95,69,0.08)]">
+        <ArrowDownIcon className="scroll-cue-arrow h-5 w-5" />
       </span>
     </a>
   );
@@ -59,6 +59,7 @@ function ScrollCue() {
 
 export default function Home() {
   const [firstName, lastName = ""] = hero.name.split(" ");
+  const heroEmailHref = `mailto:${contact.email}`;
 
   return (
     <>
@@ -70,10 +71,10 @@ export default function Home() {
 
         <div className="relative mx-auto flex w-full max-w-5xl flex-col items-center text-center">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/78 px-4 py-2 text-sm text-[var(--muted)] shadow-[0_18px_60px_rgba(87,71,52,0.08)] sm:mb-8">
-              <span className="relative flex h-2 w-2">
+            <div className="mb-7 inline-flex items-center gap-3 text-[1.05rem] font-medium tracking-[-0.012em] text-[var(--muted)] sm:mb-9 sm:text-[1.22rem]">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--accent)] opacity-35" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--accent)]" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
               </span>
               {hero.status}
             </div>
@@ -81,16 +82,16 @@ export default function Home() {
             <h1 className="display-serif max-w-4xl text-balance text-4xl font-bold leading-[0.9] tracking-[-0.07em] text-[var(--fg)] sm:text-6xl lg:text-7xl">
               {firstName} <span className="gradient-text">{lastName}</span>
             </h1>
-            <p className="hero-handle mt-5 text-[17px] tracking-[0.14em] text-[var(--soft)] sm:text-[18px] sm:tracking-[0.1em]">{hero.handle}</p>
+            <p className="hero-handle mt-5 text-[18px] tracking-[0.05em] text-[var(--soft)] sm:text-[20px] sm:tracking-[0.03em]">{hero.handle}</p>
             <p className="mt-6 max-w-2xl text-balance text-lg leading-8 text-[var(--muted)] sm:mt-8 sm:text-2xl sm:leading-10">{hero.title}</p>
             <p className="mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8">{hero.summary}</p>
 
-            <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center sm:gap-4">
-              <a href={hero.primaryCta.href} className="inline-flex w-full items-center justify-center rounded-full border border-[var(--accent)] bg-[var(--accent)] px-5 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)] sm:w-auto">
-                {hero.primaryCta.label}
+            <div className="mt-8 flex items-center justify-center gap-3 sm:mt-10 sm:gap-4">
+              <a href={contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hero-contact-link inline-flex h-[3.15rem] w-[3.15rem] items-center justify-center text-[var(--accent-strong)] transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]">
+                <GitHubIcon className="h-[1.85rem] w-[1.85rem]" />
               </a>
-              <a href={hero.secondaryCta.href} className="inline-flex w-full items-center justify-center rounded-full border border-[var(--line)] bg-white/78 px-5 py-3 text-sm font-medium text-[var(--fg)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] sm:w-auto">
-                {hero.secondaryCta.label}
+              <a href={heroEmailHref} aria-label="发送邮件" className="hero-contact-link inline-flex h-[3.15rem] w-[3.15rem] items-center justify-center text-[var(--accent-strong)] transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]">
+                <MailIcon className="h-[1.95rem] w-[1.95rem]" />
               </a>
             </div>
 
@@ -104,7 +105,7 @@ export default function Home() {
           <SectionHeading
             id="projects"
             title="项目展示"
-            description="先用更紧凑的案例卡片承载项目信息，右上角预留仓库和演示入口；后续补充真实内容时，只需要替换文案和链接即可。"
+            description="一系列精选的个人项目，右上角提供 GitHub 仓库和视频演示入口"
           />
 
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -117,7 +118,7 @@ export default function Home() {
                     </h3>
                   </div>
 
-                  <div className="flex shrink-0 items-center gap-2">
+                  <div className="-mt-1.5 -mr-1 flex shrink-0 items-center gap-2 sm:-mt-2 sm:-mr-1.5">
                     <ProjectActionLink href={project.repoHref} label={`${project.title} GitHub 仓库`}>
                       <GitHubIcon className="h-4 w-4" />
                     </ProjectActionLink>
@@ -151,7 +152,7 @@ export default function Home() {
           <SectionHeading
             id="certificates"
             title="可验证的学习记录"
-            description="在线 MOOC 平台的课程证书，保留本地 PDF 和在线验证链接两种方式"
+            description="在线 MOOC 平台的课程证书，提供本地 PDF 和官方在线验证链接两种方式"
           />
 
           <CertificateAccordion groups={certificateGroups} />
@@ -168,15 +169,6 @@ export default function Home() {
               打开简历
               <ExternalLinkIcon className="h-4 w-4" />
             </a>
-
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a href={contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line)] bg-white/78 text-[var(--fg)] shadow-[0_16px_40px_rgba(56,95,69,0.08)] transition-all hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-                <GitHubIcon className="h-5 w-5" />
-              </a>
-              <a href={`mailto:${contact.email}`} aria-label="发送邮件" className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--line)] bg-white/78 text-[var(--fg)] shadow-[0_16px_40px_rgba(56,95,69,0.08)] transition-all hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--accent)]">
-                <MailIcon className="h-5 w-5" />
-              </a>
-            </div>
           </div>
         </div>
       </section>

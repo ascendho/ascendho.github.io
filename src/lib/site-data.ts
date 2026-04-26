@@ -29,11 +29,9 @@ export const hero = {
   name: "Ascend Ho",
   handle: "@ascendho",
   status: "正在寻找实习机会",
-  title: "成长中的 Agent 开发者。",
+  title: "不断成长的 Agent 开发者",
   summary:
-    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。页面右上角附有我的个人简历，若有兴趣，可邮件联系。",
-  primaryCta: { label: "查看项目", href: "#projects" },
-  secondaryCta: { label: "联系我", href: "#contact" },
+    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。GitHub 社区活跃人员，细节强迫症。",
   resumeHref,
 } as const;
 
@@ -125,7 +123,7 @@ export const certificateGroups = [
 export const contact = {
   title: "准备进入下一次对话",
   description:
-    "如果你想更详细地了解我的方向、项目和可验证的学习记录，可以先查看简历，或者直接给我发送邮件。",
+    "若你希望更深入地了解我的教育背景、发展方向、项目经历及科研成果，可查阅网页右上角的完整个人简历；如有兴趣，欢迎直接通过邮件联系。",
   email: "ascendho@outlook.com",
   github: "https://github.com/ascendho",
   resumeHref,
