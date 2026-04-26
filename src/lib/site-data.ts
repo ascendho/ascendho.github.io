@@ -43,7 +43,7 @@ export const projects = [
     description:
       "基于 ColPali + MUVERA + Qdrant 的多模态视觉文档问答系统，支持 PDF、图片及纯文本格式文件。",
     tags: ["ColPali", "MUVERA", "Qdrant", "Multimodal", "RAG"],
-    repoHref: "#",
+    repoHref: "https://github.com/ascendho/VisionDoc",
     demoHref: "#",
   },
   {
