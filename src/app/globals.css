@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --page-bg: #edf6ef;
+  --page-surface: rgba(248, 253, 248, 0.8);
+  --page-surface-strong: rgba(255, 255, 255, 0.92);
+  --header-surface: rgba(237, 246, 239, 0.86);
+  --line: rgba(96, 128, 104, 0.18);
+  --line-soft: rgba(96, 128, 104, 0.1);
+  --fg: #1c241d;
+  --muted: #58655b;
+  --soft: #7b8a7f;
+  --accent: #4f8b63;
+  --accent-strong: #3e6f4f;
+  --accent-soft: rgba(79, 139, 99, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+}
+
+body {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(148, 213, 163, 0.34), transparent 28%),
+    radial-gradient(circle at 84% 14%, rgba(109, 179, 128, 0.2), transparent 25%),
+    radial-gradient(circle at 88% 78%, rgba(174, 224, 184, 0.16), transparent 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(237, 246, 239, 0.98)),
+    var(--page-bg);
+}
+
+a {
+  text-decoration: none;
+}
+
+.glass-panel {
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--page-surface-strong), var(--page-surface));
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 70px rgba(54, 90, 62, 0.08);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #27412f 0%, #4f8b63 56%, #7db487 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-surface {
+  background:
+    linear-gradient(145deg, rgba(79, 139, 99, 0.12), rgba(176, 222, 187, 0.2)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.36));
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.anchor-offset {
+  scroll-margin-top: 7rem;
+}
