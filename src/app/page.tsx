@@ -1,5 +1,5 @@
 import { CertificateAccordion } from "@/components/certificate-accordion";
-import { ArrowDownIcon, GitHubIcon, MailIcon } from "@/components/ui-icons";
+import { ArrowDownIcon, ExternalLinkIcon, GitHubIcon, MailIcon } from "@/components/ui-icons";
 import { certificateGroups, contact, hero, projects } from "@/lib/site-data";
 
 function SectionHeading(props: {
@@ -130,8 +130,9 @@ export default function Home() {
             <h2 className="text-3xl font-semibold text-[var(--fg)] sm:text-4xl">{contact.title}</h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[var(--muted)]">{contact.description}</p>
 
-            <a href={contact.resumeHref} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex rounded-full border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]">
+            <a href={contact.resumeHref} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]">
               打开简历
+              <ExternalLinkIcon className="h-4 w-4" />
             </a>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

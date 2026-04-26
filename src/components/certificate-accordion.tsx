@@ -102,7 +102,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                     >
                       <div className="flex items-start gap-4">
                         <span className="mt-2 h-2.5 w-2.5 flex-none rounded-full bg-[var(--accent)]" />
-                        <h4 className="text-base font-medium text-[var(--fg)] sm:text-lg">
+                        <h4 className="text-base font-semibold tracking-tight text-[var(--fg)] sm:text-lg">
                           {item.title}
                         </h4>
                       </div>

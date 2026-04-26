@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-import { GitHubIcon, MailIcon } from "@/components/ui-icons";
+import { ExternalLinkIcon, GitHubIcon, MailIcon } from "@/components/ui-icons";
 import { contact, navigation, withBasePath } from "@/lib/site-data";
 
 import "./globals.css";
@@ -30,9 +30,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="rounded-full px-4 py-2 text-sm text-[var(--muted)] transition-colors hover:bg-white/80 hover:text-[var(--fg)]"
+                    className="inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm text-[var(--muted)] transition-colors hover:bg-white/80 hover:text-[var(--fg)]"
                   >
                     {item.label}
+                    {item.external ? <ExternalLinkIcon className="h-3 w-3" /> : null}
                   </a>
                 ))}
               </div>
@@ -46,9 +47,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="shrink-0 rounded-full border border-[var(--line)] bg-white/80 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
+                    className="inline-flex items-center gap-1 shrink-0 rounded-full border border-[var(--line)] bg-white/80 px-3 py-1.5 text-xs text-[var(--muted)] transition-colors hover:text-[var(--fg)]"
                   >
                     {item.label}
+                    {item.external ? <ExternalLinkIcon className="h-2.5 w-2.5" /> : null}
                   </a>
                 ))}
               </div>
