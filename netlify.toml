@@ -1,6 +1,0 @@
-[build]
-  command = "npm run build"
-
-[build.environment]
-  GITHUB_PAGES = "false"
-  NEXT_PUBLIC_BASE_PATH = ""
