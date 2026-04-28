@@ -29,9 +29,9 @@ export const hero = {
   name: "Ascend Ho",
   handle: "@ascendho",
   status: "正在寻找实习机会",
-  title: "不断成长的 Agent 开发者",
+  title: "成长中的 Agent 开发者",
   summary:
-    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。GitHub 社区活跃人员，细节强迫症。",
+    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。",
   resumeHref,
 } as const;
 
@@ -55,7 +55,7 @@ export const projects = [
   {
     title: "Wordle",
     description:
-      "以 Qwen 2.5 7B Instruct 为基座模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
+      "以 Qwen 2.5 7B Instruct 为指令微调模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
     tags: ["Qwen", "SFT", "GRPO", "Lora","Fine-tuning"],
     repoHref: "https://github.com/ascendho/Wordle",
     demoHref: "#",
