@@ -122,7 +122,7 @@ export function CertificateAccordion({ groups }: CertificateAccordionProps) {
                           rel="noopener noreferrer"
                           className="inline-flex rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-sm text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]"
                         >
-                          在线验证
+                          在线核验
                         </a>
                       </div>
                     </article>
