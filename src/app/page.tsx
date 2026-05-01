@@ -11,11 +11,19 @@ function SectionHeading(props: {
 }) {
   return (
     <div id={props.id} className="anchor-offset mb-10 scroll-mt-28 sm:mb-12">
-      <h2 className="max-w-3xl text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.05em] text-[var(--fg)] sm:text-4xl">
+      <h2
+        lang="zh-CN"
+        className="cn-accent-heading max-w-3xl text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
+      >
         {props.title}
       </h2>
       {props.description ? (
-        <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base sm:leading-8">{props.description}</p>
+        <p
+          lang="zh-CN"
+          className="cn-songti-copy mt-4 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base sm:leading-8"
+        >
+          {props.description}
+        </p>
       ) : null}
     </div>
   );
@@ -84,7 +92,12 @@ export default function Home() {
             </h1>
             <p className="hero-handle mt-5 text-[18px] tracking-[0.05em] text-[var(--soft)] sm:text-[20px] sm:tracking-[0.03em]">{hero.handle}</p>
             <p className="mt-6 max-w-2xl text-balance text-lg leading-8 text-[var(--muted)] sm:mt-8 sm:text-2xl sm:leading-10">{hero.title}</p>
-            <p className="mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8">{hero.summary}</p>
+            <p
+              lang="zh-CN"
+              className="cn-songti-copy mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:mt-6 sm:text-lg sm:leading-8"
+            >
+              {hero.summary}
+            </p>
 
             <div className="mt-8 flex items-center justify-center gap-3 sm:mt-10 sm:gap-4">
               <a href={contact.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hero-contact-link inline-flex h-[3.15rem] w-[3.15rem] items-center justify-center text-[var(--accent-strong)] transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]">
@@ -129,7 +142,7 @@ export default function Home() {
                 </div>
 
                 <div className="relative z-10 mt-4">
-                  <p className="mt-4 text-[15px] leading-7 text-[var(--muted)] sm:text-base">
+                  <p lang="zh-CN" className="cn-songti-copy mt-4 text-[15px] leading-7 text-[var(--muted)] sm:text-base">
                     {project.description}
                   </p>
 
@@ -162,8 +175,18 @@ export default function Home() {
       <section className="px-5 py-20 sm:px-6 sm:py-24">
         <div className="mx-auto max-w-4xl">
           <div id="contact" className="glass-panel scroll-mt-28 p-7 text-center sm:p-10">
-            <h2 className="text-balance text-3xl font-semibold leading-tight text-[var(--fg)] sm:text-4xl">{contact.title}</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base sm:leading-8">{contact.description}</p>
+            <h2
+              lang="zh-CN"
+              className="cn-accent-heading text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
+            >
+              {contact.title}
+            </h2>
+            <p
+              lang="zh-CN"
+              className="cn-songti-copy mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-[var(--muted)] sm:text-base sm:leading-8"
+            >
+              {contact.description}
+            </p>
 
             <a href={contact.resumeHref} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]">
               打开简历
