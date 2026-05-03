@@ -18,6 +18,21 @@ export function withBasePath(path: string) {
 
 const resumeHref = withBasePath("/resume/resume.pdf");
 
+export type ProjectDemo = Readonly<{
+  href: string;
+  videoSrc: string;
+  posterSrc: string;
+}>;
+
+export type Project = Readonly<{
+  slug: string;
+  title: string;
+  description: string;
+  tags: ReadonlyArray<string>;
+  repoHref: string;
+  demo?: ProjectDemo;
+}>;
+
 export const navigation = [
   { label: "项目", href: "#projects", external: false },
   { label: "证书", href: "#certificates", external: false },
@@ -37,30 +52,52 @@ export const hero = {
 
 export const projects = [
   {
+    slug: "visiondoc",
     title: "VisionDoc",
     description:
-      "基于 ColPali + MUVERA + Qdrant 的多模态视觉文档问答系统，支持 PDF、图片及纯文本格式文件。",
+      "基于 ColPali + MUVERA + Qdrant 的多模态视觉文档问答系统，支持 pdf、图片及 pptx 文档。",
     tags: ["ColPali", "MUVERA", "Qdrant", "Multimodal", "RAG"],
     repoHref: "https://github.com/ascendho/VisionDoc",
-    demoHref: "#",
+    demo: {
+      href: withBasePath("/projects/visiondoc/demo/"),
+      videoSrc: withBasePath("/videos/visiondoc-demo.mp4"),
+      posterSrc: withBasePath("/videos/posters/visiondoc-demo-poster.jpg"),
+    },
   },
   {
+    slug: "e-snap",
     title: "E-Snap",
     description:
       "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，大幅提高并发数并显著降低延迟和大模型调用成本。",
     tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
     repoHref: "https://github.com/ascendho/E-Snap",
-    demoHref: "#",
+    demo: {
+      href: withBasePath("/projects/e-snap/demo/"),
+      videoSrc: withBasePath("/videos/e-snap-demo.mp4"),
+      posterSrc: withBasePath("/videos/posters/e-snap-demo-poster.jpg"),
+    },
   },
   {
+    slug: "wordle",
     title: "Wordle",
     description:
       "以 Qwen 2.5 7B Instruct 为指令微调模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
-    tags: ["Qwen", "SFT", "GRPO", "Lora","Fine-tuning"],
+    tags: ["Qwen", "SFT", "GRPO", "Lora", "Fine-tuning"],
     repoHref: "https://github.com/ascendho/Wordle",
-    demoHref: "#",
   },
-] as const;
+] satisfies ReadonlyArray<Project>;
+
+export function hasProjectDemo(project: Project): project is Project & { demo: ProjectDemo } {
+  return Boolean(project.demo);
+}
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getProjectDemoParams() {
+  return projects.filter(hasProjectDemo).map((project) => ({ slug: project.slug }));
+}
 
 export const certificateGroups = [
   {

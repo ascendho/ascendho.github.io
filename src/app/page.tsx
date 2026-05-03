@@ -34,16 +34,15 @@ function ProjectActionLink(props: {
   label: string;
   children: ReactNode;
 }) {
-  const isPlaceholder = props.href === "#";
+  const isExternal = /^https?:\/\//.test(props.href);
 
   return (
     <a
       href={props.href}
-      target={isPlaceholder ? undefined : "_blank"}
-      rel={isPlaceholder ? undefined : "noopener noreferrer"}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       aria-label={props.label}
-      aria-disabled={isPlaceholder ? true : undefined}
-      title={isPlaceholder ? `${props.label}（占位）` : props.label}
+      title={props.label}
       className="project-action inline-flex h-10 w-10 items-center justify-center rounded-2xl text-[var(--muted)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]"
     >
       {props.children}
@@ -135,9 +134,11 @@ export default function Home() {
                     <ProjectActionLink href={project.repoHref} label={`${project.title} GitHub 仓库`}>
                       <GitHubIcon className="h-4 w-4" />
                     </ProjectActionLink>
-                    <ProjectActionLink href={project.demoHref} label={`${project.title} 演示链接`}>
-                      <PlayIcon className="h-4 w-4" />
-                    </ProjectActionLink>
+                    {project.demo ? (
+                      <ProjectActionLink href={project.demo.href} label={`${project.title} 演示视频`}>
+                        <PlayIcon className="h-4 w-4" />
+                      </ProjectActionLink>
+                    ) : null}
                   </div>
                 </div>
 
