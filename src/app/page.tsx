@@ -13,7 +13,7 @@ function SectionHeading(props: {
     <div id={props.id} className="anchor-offset mb-10 scroll-mt-28 sm:mb-12">
       <h2
         lang="zh-CN"
-        className="cn-accent-heading max-w-3xl text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
+        className="cn-accent-heading max-w-3xl text-balance text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
       >
         {props.title}
       </h2>
@@ -178,7 +178,7 @@ export default function Home() {
           <div id="contact" className="glass-panel scroll-mt-28 p-7 text-center sm:p-10">
             <h2
               lang="zh-CN"
-              className="cn-accent-heading text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
+              className="cn-accent-heading text-balance text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-[var(--fg)] sm:text-4xl"
             >
               {contact.title}
             </h2>
@@ -202,7 +202,7 @@ export default function Home() {
                 href={contact.archivedResume.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium text-[var(--muted)] underline decoration-2 decoration-[var(--muted)] underline-offset-2 transition-colors duration-200 hover:text-[var(--accent)] hover:decoration-[var(--accent)] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--page-bg)]"
+                className="font-semibold text-[var(--fg)] underline decoration-2 decoration-[color:rgba(28,36,29,0.66)] underline-offset-2 transition-colors duration-200 hover:text-[var(--accent-strong)] hover:decoration-[var(--accent-strong)] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--page-bg)]"
               >
                 {contact.archivedResume.label}
               </a>
