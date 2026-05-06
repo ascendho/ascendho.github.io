@@ -17,6 +17,7 @@ export function withBasePath(path: string) {
 }
 
 const resumeHref = withBasePath("/resume/resume.pdf");
+const archivedResumeHref = withBasePath("/resume/archive/resume-legacy.pdf");
 
 export type ProjectDemo = Readonly<{
   href: string;
@@ -160,8 +161,12 @@ export const certificateGroups = [
 export const contact = {
   title: "准备进入下一次对话",
   description:
-    "若你希望更深入地了解我的教育背景、发展方向、项目经历及科研成果，可查阅网页右上角的完整个人简历；如有兴趣，欢迎直接通过邮件联系。",
+    "若你希望更深入地了解我的教育背景、发展方向、项目经历及科研成果，可查阅当前完整简历；如有兴趣，欢迎直接通过邮件联系。",
   email: "ascendho@outlook.com",
   github: "https://github.com/ascendho",
   resumeHref,
+  archivedResume: {
+    href: archivedResumeHref,
+    label: "过往方向简历",
+  },
 } as const;

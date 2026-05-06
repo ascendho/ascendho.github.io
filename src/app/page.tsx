@@ -193,6 +193,22 @@ export default function Home() {
               打开简历
               <ExternalLinkIcon className="h-4 w-4" />
             </a>
+
+            <p
+              lang="zh-CN"
+              className="cn-songti-copy mx-auto mt-4 max-w-xl text-[13px] leading-6 text-[var(--soft)] sm:text-[14px]"
+            >
+              若你想了解我过往的相关经历，可再查看<a
+                href={contact.archivedResume.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-medium text-[var(--muted)] underline decoration-2 decoration-[var(--muted)] underline-offset-2 transition-colors duration-200 hover:text-[var(--accent)] hover:decoration-[var(--accent)] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--page-bg)]"
+              >
+                {contact.archivedResume.label}
+                <ExternalLinkIcon className="h-3 w-3 shrink-0" />
+              </a>
+              ，仅作参考。
+            </p>
           </div>
         </div>
       </section>

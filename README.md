@@ -17,7 +17,8 @@ npm start
 ## 资源目录
 
 - 证书 PDF：`public/certificates/`
-- 简历 PDF：`public/resume/resume.pdf`
+- 当前简历 PDF：`public/resume/resume.pdf`
+- 历史简历归档：`public/resume/archive/`
 - 站点图标：`public/favicon.svg`
 
 ## 代码入口
