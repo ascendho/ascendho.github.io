@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import "@fontsource/noto-serif-sc/chinese-simplified-400.css";
+import "@fontsource/noto-serif-sc/chinese-simplified-500.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 
@@ -32,7 +34,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="mx-auto max-w-6xl">
             <div className="flex items-center justify-between px-5 py-3.5 sm:px-6 md:py-4">
               <a
-                href="#top"
+                href={withBasePath("/#top")}
                 aria-label="返回顶部"
                 className="site-mono header-home-link inline-flex items-center justify-center text-[0.9rem] font-medium tracking-[0.02em] text-[var(--accent-strong)] transition-colors duration-200 hover:text-[var(--accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--page-bg)]"
               >

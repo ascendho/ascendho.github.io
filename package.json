@@ -7,6 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/noto-serif-sc": "^5.2.8",
     "@tailwindcss/postcss": "^4.2.4",
     "next": "^16.2.4",
     "react": "^19.2.5",

@@ -189,7 +189,7 @@ export default function Home() {
               {contact.description}
             </p>
 
-            <a href={contact.resumeHref} target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]">
+            <a href={contact.resumeHref} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full border border-[var(--accent)] bg-[var(--accent)] px-6 py-3 text-sm font-medium text-white transition-colors hover:border-[var(--accent-strong)] hover:bg-[var(--accent-strong)]">
               打开简历
               <ExternalLinkIcon className="h-4 w-4" />
             </a>
@@ -202,10 +202,9 @@ export default function Home() {
                 href={contact.archivedResume.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-medium text-[var(--muted)] underline decoration-2 decoration-[var(--muted)] underline-offset-2 transition-colors duration-200 hover:text-[var(--accent)] hover:decoration-[var(--accent)] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--page-bg)]"
+                className="font-medium text-[var(--muted)] underline decoration-2 decoration-[var(--muted)] underline-offset-2 transition-colors duration-200 hover:text-[var(--accent)] hover:decoration-[var(--accent)] focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--page-bg)]"
               >
                 {contact.archivedResume.label}
-                <ExternalLinkIcon className="h-3 w-3 shrink-0" />
               </a>
               ，仅作参考。
             </p>

@@ -205,14 +205,14 @@ a {
 }
 
 .cn-songti-copy {
-  font-family: "Songti SC", "STSong", "STZhongsong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "STZhongsong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", serif;
   letter-spacing: 0;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
 }
 
 .cn-accent-heading {
-  font-family: "Songti SC", "STSong", "STZhongsong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", serif;
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "STZhongsong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", serif;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
 }
@@ -278,6 +278,7 @@ a {
 }
 
 @keyframes scrollCueFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -305,6 +306,7 @@ a {
 }
 
 @keyframes scrollCueArrow {
+
   0%,
   100% {
     transform: translateY(0);
@@ -343,6 +345,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .project-card,
   .project-card::before,
   .project-card::after,

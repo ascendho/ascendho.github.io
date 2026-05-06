@@ -35,9 +35,9 @@ export type Project = Readonly<{
 }>;
 
 export const navigation = [
-  { label: "项目", href: "#projects", external: false },
-  { label: "证书", href: "#certificates", external: false },
-  { label: "联系", href: "#contact", external: false },
+  { label: "项目", href: withBasePath("/#projects"), external: false },
+  { label: "证书", href: withBasePath("/#certificates"), external: false },
+  { label: "联系", href: withBasePath("/#contact"), external: false },
   { label: "简历", href: resumeHref, external: true },
 ] as const;
 
