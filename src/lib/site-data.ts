@@ -69,7 +69,7 @@ export const projects = [
     slug: "e-snap",
     title: "E-Snap",
     description:
-      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，大幅提高并发数并显著降低延迟和大模型调用成本。",
+      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，提高吞吐量并显著降低延迟和大模型调用成本。",
     tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
     repoHref: "https://github.com/ascendho/E-Snap",
     demo: {
