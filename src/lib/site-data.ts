@@ -125,6 +125,11 @@ export const certificateGroups = [
         verify: "https://coursera.org/verify/2C87GU27VV3F",
       },
       {
+        title: "RAG",
+        pdf: withBasePath("/certificates/RAG.pdf"),
+        verify: "https://coursera.org/verify/1GSG36IPBGYL",
+      },
+      {
         title: "Virtualization",
         pdf: withBasePath("/certificates/virtualization.pdf"),
         verify: "https://coursera.org/verify/5HWVHCGXB9EQ",
