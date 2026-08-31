@@ -80,7 +80,7 @@ a {
   min-height: 300px;
   display: flex;
   flex-direction: column;
-  padding: 8px 0;
+  padding: 4px 0;
   color: var(--text-muted);
   font-size: 18px;
   line-height: 30px;
