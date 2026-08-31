@@ -16,89 +16,34 @@ export function withBasePath(path: string) {
   return normalizedBasePath ? `${normalizedBasePath}${path}` : path;
 }
 
-const resumeHref = withBasePath("/resume/resume.pdf");
-const archivedResumeHref = withBasePath("/resume/archive/resume-legacy.pdf");
-
-export type ProjectDemo = Readonly<{
-  href: string;
-  videoSrc: string;
-  posterSrc: string;
-}>;
-
-export type Project = Readonly<{
-  slug: string;
-  title: string;
-  description: string;
-  tags: ReadonlyArray<string>;
-  repoHref: string;
-  demo?: ProjectDemo;
-}>;
-
-export const navigation = [
-  { label: "项目", href: withBasePath("/#projects"), external: false },
-  { label: "证书", href: withBasePath("/#certificates"), external: false },
-  { label: "联系", href: withBasePath("/#contact"), external: false },
-  { label: "简历", href: resumeHref, external: true },
-] as const;
-
-export const hero = {
-  name: "Ascend Ho",
-  handle: "@ascendho",
-  status: "正在寻找实习机会",
-  title: "成长中的 Agent 开发者",
-  summary:
-    "当前专注于大模型应用和 Agent 开发相关的探索，热衷以构建实际项目作为驱动力的学习方式。",
-  resumeHref,
+export const profile = {
+  terminalUser: "shea",
+  displayName: "Shea",
+  identity:
+    "一名专注于 AI Agent 与 LLM 工程的开发者，现阶段主要实践大模型部署、推理优化、Skills 编写与模型微调。",
+  showWorks: true,
+  focus:
+    "目前正参加秋招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
+  avatarSrc: withBasePath("/images/profile/avatar.jpg"),
+  avatarAlt: "阳光下的橘猫侧脸",
+  githubHref: "https://github.com/ascendho",
+  huggingFaceHref: "https://huggingface.co/ascendho",
+  email: "ascendho@outlook.com",
+  emailHref: "mailto:ascendho@outlook.com",
+  resumeHref: withBasePath("/resume/resume.pdf"),
+  certificatesHref: withBasePath("/certificates/"),
 } as const;
 
-export const projects = [
-  {
-    slug: "visiondoc",
-    title: "VisionDoc",
-    description:
-      "基于 ColPali + MUVERA + Qdrant 的多模态视觉文档问答系统，支持 pdf、图片及 pptx 文档。",
-    tags: ["ColPali", "MUVERA", "Qdrant", "Multimodal", "RAG"],
-    repoHref: "https://github.com/ascendho/VisionDoc",
-    demo: {
-      href: withBasePath("/projects/visiondoc/demo/"),
-      videoSrc: withBasePath("/videos/visiondoc-demo.mp4"),
-      posterSrc: withBasePath("/videos/posters/visiondoc-demo-poster.jpg"),
-    },
-  },
-  {
-    slug: "e-snap",
-    title: "E-Snap",
-    description:
-      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，提高吞吐量并显著降低延迟和大模型调用成本。",
-    tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
-    repoHref: "https://github.com/ascendho/E-Snap",
-    demo: {
-      href: withBasePath("/projects/e-snap/demo/"),
-      videoSrc: withBasePath("/videos/e-snap-demo.mp4"),
-      posterSrc: withBasePath("/videos/posters/e-snap-demo-poster.jpg"),
-    },
-  },
-  {
-    slug: "wordle",
-    title: "Wordle",
-    description:
-      "以 Qwen 2.5 7B Instruct 为指令微调模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
-    tags: ["Qwen", "SFT", "GRPO", "Lora", "Fine-tuning"],
-    repoHref: "https://github.com/ascendho/Wordle",
-  },
-] satisfies ReadonlyArray<Project>;
+export type Certificate = Readonly<{
+  title: string;
+  pdf: string;
+  verify: string;
+}>;
 
-export function hasProjectDemo(project: Project): project is Project & { demo: ProjectDemo } {
-  return Boolean(project.demo);
-}
-
-export function getProjectBySlug(slug: string) {
-  return projects.find((project) => project.slug === slug);
-}
-
-export function getProjectDemoParams() {
-  return projects.filter(hasProjectDemo).map((project) => ({ slug: project.slug }));
-}
+export type CertificateGroup = Readonly<{
+  platform: string;
+  items: ReadonlyArray<Certificate>;
+}>;
 
 export const certificateGroups = [
   {
@@ -161,17 +106,67 @@ export const certificateGroups = [
       },
     ],
   },
-] as const;
+] satisfies ReadonlyArray<CertificateGroup>;
 
-export const contact = {
-  title: "准备进入下一次对话",
-  description:
-    "若你希望更深入地了解我的教育背景、发展方向、项目经历及科研成果，可查阅当前完整简历；如有兴趣，欢迎直接通过邮件联系。",
-  email: "ascendho@outlook.com",
-  github: "https://github.com/ascendho",
-  resumeHref,
-  archivedResume: {
-    href: archivedResumeHref,
-    label: "过往方向简历",
+export type ProjectDemo = Readonly<{
+  href: string;
+  videoSrc: string;
+  posterSrc: string;
+}>;
+
+export type Project = Readonly<{
+  slug: string;
+  title: string;
+  description: string;
+  tags: ReadonlyArray<string>;
+  repoHref: string;
+  demo?: ProjectDemo;
+}>;
+
+export const projects = [
+  {
+    slug: "chat-anchor",
+    title: "ChatAnchor",
+    description:
+      "本地 VS Code 扩展，在项目文件夹改名或移动后，仍可将 Codex、Cursor Agent CLI 与 OpenCode 会话重新连接到项目。",
+    tags: ["TypeScript", "VS Code", "Codex", "Cursor", "OpenCode"],
+    repoHref: "https://github.com/ascendho/ChatAnchor",
   },
-} as const;
+  {
+    slug: "e-snap",
+    title: "E-Snap",
+    description:
+      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，提高吞吐量并显著降低延迟和大模型调用成本。",
+    tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
+    repoHref: "https://github.com/ascendho/E-Snap",
+    demo: {
+      href: withBasePath("/projects/e-snap/demo/"),
+      videoSrc: withBasePath("/videos/e-snap-demo.mp4"),
+      posterSrc: withBasePath("/videos/posters/e-snap-demo-poster.jpg"),
+    },
+  },
+  {
+    slug: "wordle",
+    title: "Wordle",
+    description:
+      "以 Qwen 2.5 7B Instruct 为指令微调模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
+    tags: ["Qwen", "SFT", "GRPO", "Lora", "Fine-tuning"],
+    repoHref: "https://github.com/ascendho/Wordle",
+  },
+] satisfies ReadonlyArray<Project>;
+
+export function getProjectPrimaryHref(project: Project) {
+  return project.demo?.href ?? project.repoHref;
+}
+
+export function hasProjectDemo(project: Project): project is Project & { demo: ProjectDemo } {
+  return Boolean(project.demo);
+}
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}
+
+export function getProjectDemoParams() {
+  return projects.filter(hasProjectDemo).map((project) => ({ slug: project.slug }));
+}
