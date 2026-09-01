@@ -30,7 +30,9 @@ export default function CertificatesPage() {
             <Award aria-hidden="true" />
             <h1>课程证书</h1>
           </div>
-          <p>共 {certificateCount} 项可查看、可在线核验的课程学习记录。</p>
+          <p className="certificates-summary">
+            {certificateCount} records · {certificateGroups.length} platforms · PDF + online verification
+          </p>
         </header>
 
         <div className="certificate-groups">
@@ -40,18 +42,25 @@ export default function CertificatesPage() {
             return (
               <section className="certificate-group" key={group.platform} aria-labelledby={groupId}>
                 <div className="certificate-group-header">
-                  <h2 id={groupId}>{group.platform}</h2>
-                  <span>{group.items.length} 项</span>
+                  <h2 id={groupId}>
+                    <code>~/certificates/{group.platform.toLowerCase()}/</code>
+                  </h2>
+                  <span>
+                    {group.items.length} {group.items.length === 1 ? "file" : "files"}
+                  </span>
                 </div>
 
                 <div className="certificate-list">
-                  {group.items.map((certificate) => (
+                  {group.items.map((certificate, index) => (
                     <article className="certificate-item" key={certificate.title}>
+                      <span className="certificate-index" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                       <h3>{certificate.title}</h3>
                       <div className="certificate-actions">
                         <a href={certificate.pdf} target="_blank" rel="noopener noreferrer">
                           <FileText aria-hidden="true" />
-                          证书 PDF
+                          PDF
                         </a>
                         <a href={certificate.verify} target="_blank" rel="noopener noreferrer">
                           <ExternalLink aria-hidden="true" />
