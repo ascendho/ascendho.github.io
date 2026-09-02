@@ -155,6 +155,7 @@ export type ProjectDemo = Readonly<{
 export type Project = Readonly<{
   slug: string;
   title: string;
+  qualifier?: string;
   description: string;
   tags: ReadonlyArray<string>;
   repoHref: string;
@@ -164,7 +165,8 @@ export type Project = Readonly<{
 export const projects = [
   {
     slug: "chat-anchor",
-    title: "ChatAnchor（一款 VS Code 插件）",
+    title: "ChatAnchor",
+    qualifier: "一款 VS Code 插件",
     description:
       "本地 VS Code 扩展，在项目文件夹改名或移动后，仍可将 Codex、Cursor Agent CLI 与 OpenCode 会话重新连接到项目。",
     tags: ["TypeScript", "VS Code", "Codex", "Cursor", "OpenCode"],
