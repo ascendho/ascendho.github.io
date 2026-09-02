@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, BadgeCheck, FileDown } from "lucide-react";
 
 import { certificateGroups, withBasePath } from "@/lib/site-data";
 
@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "MOOC 认证 | Shea",
   description: "Shea 的 MOOC 学习与认证记录，提供证书原件与在线核验链接。",
 };
+
+function formatIssuedAt(issuedAt: string) {
+  return issuedAt.replaceAll("-", ".");
+}
 
 export default function CertificatesPage() {
   const certificateCount = certificateGroups.reduce(
@@ -23,28 +27,37 @@ export default function CertificatesPage() {
         </a>
 
         <header className="certificates-header">
+          <p className="certificates-eyebrow">CERTIFICATE ARCHIVE</p>
           <div className="certificates-title-row">
             <h1>MOOC 认证</h1>
           </div>
           <p className="certificates-summary">
-            {certificateCount} 份课程认证，来自 {certificateGroups.length} 个平台；均可查看
-            PDF 原件并在线核验。
+            {certificateCount} 份课程认证，来自 {certificateGroups.length} 个平台；均可查看 PDF
+            原件并在线核验。
           </p>
         </header>
 
         <div className="certificate-groups">
           {certificateGroups.map((group, groupIndex) => {
             const groupId = `certificate-group-${group.platform.toLowerCase()}`;
+            const sortedCertificates = [...group.items].sort((first, second) =>
+              second.issuedAt.localeCompare(first.issuedAt),
+            );
 
             return (
-              <section className="certificate-group" key={group.platform} aria-labelledby={groupId}>
+              <section
+                className="certificate-group"
+                key={group.platform}
+                data-platform={group.platform.toLowerCase()}
+                aria-labelledby={groupId}
+              >
                 <div className="certificate-group-header">
                   <h2 id={groupId}>{group.platform}</h2>
-                  <span>{group.items.length} 份证书</span>
+                  <span>{group.items.length} 项</span>
                 </div>
 
                 <div className="certificate-grid">
-                  {group.items.map((certificate, index) => (
+                  {sortedCertificates.map((certificate, index) => (
                     <article className="certificate-card" key={certificate.title}>
                       <a
                         className="certificate-preview-link"
@@ -64,15 +77,20 @@ export default function CertificatesPage() {
                       </a>
 
                       <div className="certificate-card-details">
+                        <p className="certificate-meta">
+                          <span>{certificate.issuer}</span>
+                          <time dateTime={certificate.issuedAt}>
+                            {formatIssuedAt(certificate.issuedAt)}
+                          </time>
+                        </p>
                         <h3>{certificate.title}</h3>
-                        <p className="certificate-issuer">{certificate.issuer}</p>
                         <div className="certificate-actions">
                           <a href={certificate.pdf} target="_blank" rel="noopener noreferrer">
-                            <FileText aria-hidden="true" />
-                            查看 PDF
+                            <FileDown aria-hidden="true" strokeWidth={1.8} />
+                            PDF 原件
                           </a>
                           <a href={certificate.verify} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink aria-hidden="true" />
+                            <BadgeCheck aria-hidden="true" strokeWidth={1.8} />
                             在线核验
                           </a>
                         </div>

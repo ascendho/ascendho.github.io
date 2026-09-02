@@ -39,8 +39,34 @@ export default function Home() {
 
             <div className="home-command-block">
               <code className="home-prompt">
-                {profile.terminalUser}@localhost:~ $ echo $CURRENT_FOCUS
+                {profile.terminalUser}@localhost:~ $ status
               </code>
+              <p className="home-internship">
+                <span className="home-internship-position">
+                  <a
+                    className="home-internship-company"
+                    href={profile.internship.href}
+                    {...externalLinkProps(profile.internship.href)}
+                  >
+                    <img
+                      src={profile.internship.logoSrc}
+                      alt=""
+                      width="14"
+                      height="14"
+                      aria-hidden="true"
+                    />
+                    <span>
+                      {profile.internship.company}（{profile.internship.companyZh}）
+                    </span>
+                  </a>
+                  <span className="home-internship-separator" aria-hidden="true" />
+                  <span className="home-internship-role">{profile.internship.role}</span>
+                </span>
+                <span className="home-internship-status">
+                  <span aria-hidden="true" />
+                  {profile.internship.status}
+                </span>
+              </p>
               <p className="home-focus">{profile.focus}</p>
               {profile.showWorks ? (
                 <div className="home-works">
