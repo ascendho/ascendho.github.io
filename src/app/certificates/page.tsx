@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowLeft, Award, ExternalLink, FileText } from "lucide-react";
+import { ArrowLeft, ExternalLink, FileText } from "lucide-react";
 
-import { certificateGroups, profile, withBasePath } from "@/lib/site-data";
+import { certificateGroups, withBasePath } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "课程证书 | Shea",
-  description: "Shea 的课程学习记录与在线核验链接。",
+  title: "MOOC 认证 | Shea",
+  description: "Shea 的 MOOC 学习与认证记录，提供证书原件与在线核验链接。",
 };
 
 export default function CertificatesPage() {
@@ -23,49 +23,59 @@ export default function CertificatesPage() {
         </a>
 
         <header className="certificates-header">
-          <code className="certificates-prompt">
-            {profile.terminalUser}@localhost:~ $ ls ~/certificates
-          </code>
           <div className="certificates-title-row">
-            <Award aria-hidden="true" />
-            <h1>课程证书</h1>
+            <h1>MOOC 认证</h1>
           </div>
           <p className="certificates-summary">
-            {certificateCount} records · {certificateGroups.length} platforms · PDF + online verification
+            {certificateCount} 份课程认证，来自 {certificateGroups.length} 个平台；均可查看
+            PDF 原件并在线核验。
           </p>
         </header>
 
         <div className="certificate-groups">
-          {certificateGroups.map((group) => {
+          {certificateGroups.map((group, groupIndex) => {
             const groupId = `certificate-group-${group.platform.toLowerCase()}`;
 
             return (
               <section className="certificate-group" key={group.platform} aria-labelledby={groupId}>
                 <div className="certificate-group-header">
-                  <h2 id={groupId}>
-                    <code>~/certificates/{group.platform.toLowerCase()}/</code>
-                  </h2>
-                  <span>
-                    {group.items.length} {group.items.length === 1 ? "file" : "files"}
-                  </span>
+                  <h2 id={groupId}>{group.platform}</h2>
+                  <span>{group.items.length} 份证书</span>
                 </div>
 
-                <div className="certificate-list">
+                <div className="certificate-grid">
                   {group.items.map((certificate, index) => (
-                    <article className="certificate-item" key={certificate.title}>
-                      <span className="certificate-index" aria-hidden="true">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <h3>{certificate.title}</h3>
-                      <div className="certificate-actions">
-                        <a href={certificate.pdf} target="_blank" rel="noopener noreferrer">
-                          <FileText aria-hidden="true" />
-                          PDF
-                        </a>
-                        <a href={certificate.verify} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink aria-hidden="true" />
-                          在线核验
-                        </a>
+                    <article className="certificate-card" key={certificate.title}>
+                      <a
+                        className="certificate-preview-link"
+                        href={certificate.pdf}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`查看 ${certificate.title} 的 PDF 证书`}
+                      >
+                        <img
+                          src={certificate.preview}
+                          alt={`${certificate.title} 课程证书预览`}
+                          width="1200"
+                          height="900"
+                          loading={groupIndex === 0 && index < 2 ? "eager" : "lazy"}
+                          decoding="async"
+                        />
+                      </a>
+
+                      <div className="certificate-card-details">
+                        <h3>{certificate.title}</h3>
+                        <p className="certificate-issuer">{certificate.issuer}</p>
+                        <div className="certificate-actions">
+                          <a href={certificate.pdf} target="_blank" rel="noopener noreferrer">
+                            <FileText aria-hidden="true" />
+                            查看 PDF
+                          </a>
+                          <a href={certificate.verify} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink aria-hidden="true" />
+                            在线核验
+                          </a>
+                        </div>
                       </div>
                     </article>
                   ))}

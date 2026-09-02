@@ -36,7 +36,9 @@ export const profile = {
 
 export type Certificate = Readonly<{
   title: string;
+  issuer: string;
   pdf: string;
+  preview: string;
   verify: string;
 }>;
 
@@ -51,32 +53,44 @@ export const certificateGroups = [
     items: [
       {
         title: "AI Python for Beginners",
+        issuer: "DeepLearning.AI",
         pdf: withBasePath("/certificates/ai-python-for-beginners.pdf"),
+        preview: withBasePath("/images/certificates/ai-python-for-beginners.jpg"),
         verify: "https://coursera.org/verify/Z5Y6FYAN8USM",
       },
       {
-        title: "nand2tetris I",
+        title: "Build a Modern Computer from First Principles: From Nand to Tetris",
+        issuer: "Hebrew University of Jerusalem",
         pdf: withBasePath("/certificates/nand2tetris-i.pdf"),
+        preview: withBasePath("/images/certificates/nand2tetris-i.jpg"),
         verify: "https://coursera.org/verify/1K1GABQV8WKB",
       },
       {
-        title: "nand2tetris II",
+        title: "Build a Modern Computer from First Principles: Nand to Tetris Part II",
+        issuer: "Hebrew University of Jerusalem",
         pdf: withBasePath("/certificates/nand2tetris-ii.pdf"),
+        preview: withBasePath("/images/certificates/nand2tetris-ii.jpg"),
         verify: "https://coursera.org/verify/WUAL2O52509M",
       },
       {
-        title: "Reinforcement Learning",
+        title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+        issuer: "DeepLearning.AI · Stanford University",
         pdf: withBasePath("/certificates/reinforcement-learning.pdf"),
+        preview: withBasePath("/images/certificates/reinforcement-learning.jpg"),
         verify: "https://coursera.org/verify/2C87GU27VV3F",
       },
       {
-        title: "RAG",
+        title: "Retrieval Augmented Generation (RAG)",
+        issuer: "DeepLearning.AI",
         pdf: withBasePath("/certificates/RAG.pdf"),
+        preview: withBasePath("/images/certificates/rag.jpg"),
         verify: "https://coursera.org/verify/1GSG36IPBGYL",
       },
       {
-        title: "Virtualization",
+        title: "Intro to Operating Systems 1: Virtualization",
+        issuer: "Codio",
         pdf: withBasePath("/certificates/virtualization.pdf"),
+        preview: withBasePath("/images/certificates/virtualization.jpg"),
         verify: "https://coursera.org/verify/5HWVHCGXB9EQ",
       },
     ],
@@ -85,13 +99,17 @@ export const certificateGroups = [
     platform: "Harvard",
     items: [
       {
-        title: "CS50 SQL",
+        title: "CS50's Introduction to Databases with SQL",
+        issuer: "Harvard University",
         pdf: withBasePath("/certificates/cs50-sql.pdf"),
+        preview: withBasePath("/images/certificates/cs50-sql.jpg"),
         verify: "https://cs50.harvard.edu/certificates/ea035c2f-87b0-4993-b6a8-d7d2ffa021cf",
       },
       {
-        title: "CS50x",
+        title: "CS50's Introduction to Computer Science",
+        issuer: "Harvard University",
         pdf: withBasePath("/certificates/cs50x.pdf"),
+        preview: withBasePath("/images/certificates/cs50x.jpg"),
         verify: "https://cs50.harvard.edu/certificates/db573909-1ee6-41be-87f8-9c0b8a9d4c8a",
       },
     ],
@@ -101,7 +119,9 @@ export const certificateGroups = [
     items: [
       {
         title: "The Grey Wolf Optimizer",
+        issuer: "Seyedali Mirjalili · Udemy",
         pdf: withBasePath("/certificates/the-grey-wolf-optimizer.pdf"),
+        preview: withBasePath("/images/certificates/the-grey-wolf-optimizer.jpg"),
         verify: "https://ude.my/UC-c0d986ca-97d3-45ec-b8ac-60a915774900",
       },
     ],
@@ -126,7 +146,7 @@ export type Project = Readonly<{
 export const projects = [
   {
     slug: "chat-anchor",
-    title: "ChatAnchor",
+    title: "ChatAnchor（一款 VS Code 插件）",
     description:
       "本地 VS Code 扩展，在项目文件夹改名或移动后，仍可将 Codex、Cursor Agent CLI 与 OpenCode 会话重新连接到项目。",
     tags: ["TypeScript", "VS Code", "Codex", "Cursor", "OpenCode"],

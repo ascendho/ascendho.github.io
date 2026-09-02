@@ -235,7 +235,7 @@ a {
 
 .certificates-content {
   width: 100%;
-  max-width: 850px;
+  max-width: 1040px;
   margin: 0 auto;
   opacity: 0;
   transform: translateY(8px);
@@ -265,6 +265,7 @@ a {
 }
 
 .page-back-link:focus-visible,
+.certificate-preview-link:focus-visible,
 .certificate-actions a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 3px;
@@ -275,21 +276,11 @@ a {
   margin-top: 36px;
 }
 
-.certificates-prompt {
-  display: block;
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  overflow-wrap: anywhere;
-}
-
 .certificates-title-row {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 16px;
+  margin: 0;
 }
 
 .certificates-title-row svg {
@@ -311,18 +302,18 @@ a {
 .certificates-header .certificates-summary {
   margin: 16px 0 0;
   color: var(--text-muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 28px;
   overflow-wrap: anywhere;
+  text-wrap: pretty;
 }
 
 .certificate-groups {
-  margin-top: 44px;
+  margin-top: 52px;
 }
 
 .certificate-group + .certificate-group {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .certificate-group-header {
@@ -330,7 +321,7 @@ a {
   align-items: baseline;
   justify-content: space-between;
   gap: 24px;
-  padding: 0 12px 10px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #c8c8c8;
 }
 
@@ -338,16 +329,11 @@ a {
   min-width: 0;
   margin: 0;
   color: var(--text-primary);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 26px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
   letter-spacing: 0;
   overflow-wrap: anywhere;
-}
-
-.certificate-group-header code {
-  font: inherit;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 .certificate-group-header span {
@@ -358,45 +344,83 @@ a {
   white-space: nowrap;
 }
 
-.certificate-item {
+.certificate-grid {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 16px;
-  min-height: 66px;
-  padding: 13px 12px;
-  border-bottom: 1px solid var(--line);
-  transition: background-color 160ms ease;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 36px 24px;
+  margin-top: 24px;
 }
 
-.certificate-item:hover,
-.certificate-item:focus-within {
-  background: #f3f3f3;
-}
-
-.certificate-index {
-  color: #9a9a9a;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 13px;
-  line-height: 22px;
-}
-
-.certificate-item h3 {
+.certificate-card {
+  display: flex;
+  height: 100%;
   min-width: 0;
+  flex-direction: column;
+}
+
+.certificate-preview-link {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  background: #f0f0f0;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.certificate-preview-link:hover,
+.certificate-preview-link:focus-visible {
+  border-color: #9a9a9a;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 7%);
+}
+
+.certificate-preview-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.certificate-card-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+.certificate-card h3 {
   margin: 0;
   color: var(--text-primary);
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 17px;
+  font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
 
+.certificate-issuer {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
+}
+
 .certificate-actions {
   display: flex;
+  min-height: 24px;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-start;
   gap: 10px 18px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .certificate-actions a {
@@ -608,7 +632,6 @@ a {
 
 @media (max-width: 720px) {
   .home-terminal,
-  .certificates-prompt,
   .demo-prompt,
   .demo-description {
     font-size: 17px;
@@ -625,28 +648,35 @@ a {
   }
 
   .certificate-groups {
-    margin-top: 42px;
+    margin-top: 44px;
   }
 
   .certificates-header .certificates-summary {
-    font-size: 13px;
-    line-height: 21px;
+    font-size: 15px;
+    line-height: 26px;
   }
 
   .certificate-group-header {
-    padding-right: 8px;
-    padding-left: 8px;
+    padding-bottom: 10px;
   }
 
-  .certificate-item {
-    grid-template-columns: 32px minmax(0, 1fr);
-    gap: 6px 12px;
-    padding: 14px 8px 16px;
+  .certificate-group-header h2 {
+    font-size: 20px;
+    line-height: 30px;
   }
 
-  .certificate-actions {
-    grid-column: 2;
-    justify-content: flex-start;
+  .certificate-group + .certificate-group {
+    margin-top: 52px;
+  }
+
+  .certificate-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+    margin-top: 20px;
+  }
+
+  .certificate-preview-link {
+    padding: 6px;
   }
 
   .demo-title {
@@ -665,7 +695,7 @@ a {
 
   .home-terminal a,
   .page-back-link,
-  .certificate-item,
+  .certificate-preview-link,
   .certificate-actions a,
   .demo-link,
   .demo-back {
