@@ -23,7 +23,7 @@ export const profile = {
     "一名专注于 AI Agent 与 LLM 工程的开发者，现阶段主要实践大模型部署、推理优化、Skills 编写与模型微调。",
   showWorks: true,
   focus:
-    "目前正积极备战并参与秋招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
+    "目前正积极备战并参与 2027 秋招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
   internship: {
     company: "Knownsec",
     companyZh: "知道创宇",
