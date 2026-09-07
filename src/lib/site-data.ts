@@ -186,12 +186,12 @@ export const projects = [
     },
   },
   {
-    slug: "wordle",
-    title: "Wordle",
+    slug: "lumisense",
+    title: "LumiSense",
     description:
-      "以 Qwen 2.5 7B Instruct 为指令微调模型，基于 SFT 与 GRPO 对 Wordle（一款猜词游戏）进行两阶段调优。",
-    tags: ["Qwen", "SFT", "GRPO", "Lora", "Fine-tuning"],
-    repoHref: "https://github.com/ascendho/Wordle",
+      "面向工业 IoT 传感器根因诊断的边缘框架，使用适配小语言模型进行证据约束诊断，并覆盖微调、蒸馏、量化与边云路由流程。",
+    tags: ["SLM", "Industrial AI", "IoT", "Fine-tuning", "Edge AI"],
+    repoHref: "https://github.com/ascendho/LumiSense",
   },
 ] satisfies ReadonlyArray<Project>;
 
