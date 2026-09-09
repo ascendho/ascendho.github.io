@@ -46,7 +46,7 @@ export type Certificate = Readonly<{
   title: string;
   issuer: string;
   issuedAt: string;
-  pdf: string;
+  pdf?: string;
   preview: string;
   verify: string;
 }>;
@@ -141,6 +141,43 @@ export const certificateGroups = [
         pdf: withBasePath("/certificates/the-grey-wolf-optimizer.pdf"),
         preview: withBasePath("/images/certificates/the-grey-wolf-optimizer.jpg"),
         verify: "https://ude.my/UC-c0d986ca-97d3-45ec-b8ac-60a915774900",
+      },
+    ],
+  },
+  {
+    platform: "DeepLearning.AI",
+    items: [
+      {
+        title: "Intro to Federated Learning",
+        issuer: "Flower Labs",
+        issuedAt: "2025-05-18",
+        preview: withBasePath("/images/certificates/intro-to-federated-learning.jpg"),
+        verify:
+          "https://www.deeplearning.ai/accomplishments/553777c2-123c-4ab2-aa16-02d07f73e6df",
+      },
+      {
+        title: "Building Your Own Database Agent",
+        issuer: "Microsoft",
+        issuedAt: "2025-01-16",
+        preview: withBasePath("/images/certificates/building-your-own-database-agent.jpg"),
+        verify:
+          "https://www.deeplearning.ai/accomplishments/ebf0f49d-9f55-4d25-8039-839bb92ed8bd",
+      },
+      {
+        title: "Introduction to on-device AI",
+        issuer: "Qualcomm",
+        issuedAt: "2025-01-10",
+        preview: withBasePath("/images/certificates/intro-to-on-device-ai.jpg"),
+        verify:
+          "https://www.deeplearning.ai/accomplishments/93f96fbf-6ffd-475e-9964-4d34a59fb244",
+      },
+      {
+        title: "Reasoning with o1",
+        issuer: "OpenAI",
+        issuedAt: "2025-01-07",
+        preview: withBasePath("/images/certificates/reasoning-with-o1.jpg"),
+        verify:
+          "https://www.deeplearning.ai/accomplishments/99d149bc-c700-4982-a572-b1de23bde3cc",
       },
     ],
   },
