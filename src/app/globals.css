@@ -421,6 +421,11 @@ a {
   --platform-accent-soft: #f1ebff;
 }
 
+.certificate-group[data-platform="deeplearning.ai"] {
+  --platform-accent: #c9354a;
+  --platform-accent-soft: #fdeef0;
+}
+
 .certificate-group-header {
   display: flex;
   align-items: baseline;
@@ -463,6 +468,117 @@ a {
   white-space: nowrap;
 }
 
+.certificate-group-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+
+.certificate-group-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.certificate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.certificate-list-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  padding: 14px 16px 14px 16px;
+  border-left: 2px solid var(--platform-accent);
+  border-radius: 4px;
+  background: var(--platform-accent-soft);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-left-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.certificate-list-item:hover,
+.certificate-list-item:focus-visible {
+  border-left-color: #a32a3d;
+  background: #ffffff;
+}
+
+.certificate-list-item:focus-visible {
+  outline-offset: 4px;
+}
+
+.certificate-list-preview {
+  position: relative;
+  display: block;
+  aspect-ratio: 1200 / 375;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+.certificate-list-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.certificate-list-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.certificate-list-meta h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  overflow-wrap: anywhere;
+}
+
+.certificate-list-actions {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.certificate-list-verify {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  gap: 7px;
+  padding: 6px 11px;
+  border: 1px solid #b9c4d2;
+  border-radius: 4px;
+  color: #27384e;
+  background: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.certificate-list-verify svg {
+  width: 16px;
+  height: 16px;
+  color: var(--platform-accent);
+}
+
 .certificate-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -493,6 +609,7 @@ a {
 }
 
 .certificate-preview-link {
+  position: relative;
   display: block;
   width: 100%;
   padding: 12px;
@@ -822,6 +939,16 @@ a {
     grid-template-columns: minmax(0, 1fr);
     gap: 36px;
     margin-top: 20px;
+  }
+
+  .certificate-list-item {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px 14px 12px 14px;
+  }
+
+  .certificate-list-meta {
+    gap: 8px;
   }
 
   .certificate-preview-link {
