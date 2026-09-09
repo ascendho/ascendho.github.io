@@ -116,7 +116,7 @@ export default function Home() {
           </a>
           <a className="home-personal-link" href={profile.certificatesHref}>
             <Award className="personal-link-icon personal-link-icon-certificates" aria-hidden="true" />
-            课程证书
+            课程认证
           </a>
         </nav>
       </div>
