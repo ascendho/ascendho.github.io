@@ -32,7 +32,7 @@ export default function Home() {
               {...externalLinkProps(profile.internship.href)}
             >
               <span aria-hidden="true" />
-              interning@Knownsec
+              interning@KnownSec
             </a>
           </div>
 
