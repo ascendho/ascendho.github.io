@@ -79,16 +79,16 @@ export default function Home() {
 
         <nav className="home-personal-links" aria-label="个人链接">
           <div className="home-link-group">
-            <p className="home-link-group-label">// 联系我</p>
+            <p className="home-link-group-label">~/contact</p>
             <div className="home-link-group-links">
               <a
                 className="home-personal-link"
-                href={profile.githubHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={profile.emailHref}
+                aria-label={`发送邮件至 ${profile.email}`}
+                title={profile.email}
               >
-                <GitHubIcon className="personal-link-icon personal-link-icon-github" />
-                GitHub
+                <Mail className="personal-link-icon personal-link-icon-email" aria-hidden="true" />
+                邮箱
               </a>
               <a
                 className="home-personal-link"
@@ -101,17 +101,17 @@ export default function Home() {
               </a>
               <a
                 className="home-personal-link"
-                href={profile.emailHref}
-                aria-label={`发送邮件至 ${profile.email}`}
-                title={profile.email}
+                href={profile.githubHref}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Mail className="personal-link-icon personal-link-icon-email" aria-hidden="true" />
-                邮箱
+                <GitHubIcon className="personal-link-icon personal-link-icon-github" />
+                GitHub
               </a>
             </div>
           </div>
           <div className="home-link-group">
-            <p className="home-link-group-label">// 了解更多</p>
+            <p className="home-link-group-label">~/more</p>
             <div className="home-link-group-links">
               <a
                 className="home-personal-link"
