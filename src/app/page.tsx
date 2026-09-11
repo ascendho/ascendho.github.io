@@ -78,46 +78,56 @@ export default function Home() {
         </section>
 
         <nav className="home-personal-links" aria-label="个人链接">
-          <a
-            className="home-personal-link"
-            href={profile.githubHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GitHubIcon className="personal-link-icon personal-link-icon-github" />
-            GitHub
-          </a>
-          <a
-            className="home-personal-link"
-            href={profile.huggingFaceHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <HuggingFaceIcon className="personal-link-icon personal-link-icon-hugging-face" />
-            Hugging Face
-          </a>
-          <a
-            className="home-personal-link"
-            href={profile.emailHref}
-            aria-label={`发送邮件至 ${profile.email}`}
-            title={profile.email}
-          >
-            <Mail className="personal-link-icon personal-link-icon-email" aria-hidden="true" />
-            邮箱
-          </a>
-          <a
-            className="home-personal-link"
-            href={profile.resumeHref}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FileText className="personal-link-icon personal-link-icon-resume" aria-hidden="true" />
-            简历
-          </a>
-          <a className="home-personal-link" href={profile.certificatesHref}>
-            <Award className="personal-link-icon personal-link-icon-certificates" aria-hidden="true" />
-            课程认证
-          </a>
+          <div className="home-link-group">
+            <p className="home-link-group-label">// 联系我</p>
+            <div className="home-link-group-links">
+              <a
+                className="home-personal-link"
+                href={profile.githubHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon className="personal-link-icon personal-link-icon-github" />
+                GitHub
+              </a>
+              <a
+                className="home-personal-link"
+                href={profile.huggingFaceHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <HuggingFaceIcon className="personal-link-icon personal-link-icon-hugging-face" />
+                Hugging Face
+              </a>
+              <a
+                className="home-personal-link"
+                href={profile.emailHref}
+                aria-label={`发送邮件至 ${profile.email}`}
+                title={profile.email}
+              >
+                <Mail className="personal-link-icon personal-link-icon-email" aria-hidden="true" />
+                邮箱
+              </a>
+            </div>
+          </div>
+          <div className="home-link-group">
+            <p className="home-link-group-label">// 了解更多</p>
+            <div className="home-link-group-links">
+              <a
+                className="home-personal-link"
+                href={profile.resumeHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FileText className="personal-link-icon personal-link-icon-resume" aria-hidden="true" />
+                简历
+              </a>
+              <a className="home-personal-link" href={profile.certificatesHref}>
+                <Award className="personal-link-icon personal-link-icon-certificates" aria-hidden="true" />
+                课程认证
+              </a>
+            </div>
+          </div>
         </nav>
       </div>
     </main>
