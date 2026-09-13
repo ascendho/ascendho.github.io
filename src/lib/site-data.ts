@@ -210,17 +210,11 @@ export const projects = [
     repoHref: "https://github.com/ascendho/ChatAnchor",
   },
   {
-    slug: "e-snap",
-    title: "E-Snap",
-    description:
-      "基于 LangGraph 与 RedisVL 的用户支持智能客服，引入语义缓存机制，提高吞吐量并显著降低延迟和大模型调用成本。",
-    tags: ["LangGraph", "RedisVL", "Cache", "Agent"],
-    repoHref: "https://github.com/ascendho/E-Snap",
-    demo: {
-      href: withBasePath("/projects/e-snap/demo/"),
-      videoSrc: withBasePath("/videos/e-snap-demo.mp4"),
-      posterSrc: withBasePath("/videos/posters/e-snap-demo-poster.jpg"),
-    },
+    slug: "ledger-x",
+    title: "Ledger-X",
+    description: "TODO: 项目描述待补充",
+    tags: ["TODO"],
+    repoHref: "https://github.com/ascendho/Ledger-X",
   },
   {
     slug: "lumisense",
