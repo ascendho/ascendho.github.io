@@ -79,7 +79,7 @@ export default function Home() {
 
         <nav className="home-personal-links" aria-label="个人链接">
           <div className="home-link-group">
-            <p className="home-link-group-label">~/contact</p>
+            <p className="home-link-group-label">~/connect</p>
             <div className="home-link-group-links">
               <a
                 className="home-personal-link"
