@@ -25,12 +25,9 @@ export const profile = {
   focus:
     "目前正积极备战并参与 2027 秋招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
   internship: {
-    company: "Knownsec",
     companyZh: "知道创宇",
     role: "AI 研发实习生",
-    status: "INTERNING",
     href: "https://www.knownsec.com/",
-    logoSrc: withBasePath("/images/brands/knownsec.jpg"),
   },
   avatarSrc: withBasePath("/images/profile/avatar.jpg"),
   avatarAlt: "阳光下的橘猫侧脸",
