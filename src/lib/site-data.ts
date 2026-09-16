@@ -30,6 +30,11 @@ export const profile = {
     href: "https://www.knownsec.com/",
   },
   avatarSrc: withBasePath("/images/profile/avatar.jpg"),
+  avatarSrcSet: [
+    `${withBasePath("/images/profile/avatar-480.jpg")} 480w`,
+    `${withBasePath("/images/profile/avatar-800.jpg")} 800w`,
+    `${withBasePath("/images/profile/avatar.jpg")} 1200w`,
+  ].join(", "),
   avatarAlt: "阳光下的橘猫侧脸",
   githubHref: "https://github.com/ascendho",
   huggingFaceHref: "https://huggingface.co/ascendho",

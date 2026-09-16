@@ -18,6 +18,8 @@ export default function Home() {
             <img
               className="home-image"
               src={profile.avatarSrc}
+              srcSet={profile.avatarSrcSet}
+              sizes="(max-width: 940px) 240px, 330px"
               alt={profile.avatarAlt}
               width="1200"
               height="1056"
