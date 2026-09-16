@@ -4,10 +4,10 @@
 
 This is a Next.js 16 portfolio built with the App Router, React 19, TypeScript, and Tailwind CSS 4.
 
-- `src/app/` contains routes, layouts, and global styles. Dynamic demo pages live under `src/app/projects/[slug]/demo/`.
+- `src/app/` contains routes, layouts, and global styles.
 - `src/components/` contains reusable UI components; keep client-only state in files marked with `"use client"`.
 - `src/lib/site-data.ts` is the central source for navigation, project, certificate, and contact content.
-- `public/` contains deployed PDFs, posters, videos, and the favicon. Raw demo footage belongs in `assets/demo-sources/`.
+- `public/` contains deployed certificate PDFs, the resume, preview images, and the favicon.
 - `.github/workflows/nextjs.yml` builds and deploys the static export to GitHub Pages from `master`.
 
 ## Build, Test, and Development Commands
@@ -24,7 +24,7 @@ Use strict TypeScript, two-space indentation, double quotes, semicolons, and the
 
 ## Testing Guidelines
 
-No automated test framework or coverage threshold is currently configured. Treat `npm run build` as the required pre-commit check. Manually verify changed routes at mobile and desktop widths, keyboard interaction, external links, base-path navigation, PDFs, posters, and video playback. If tests are introduced, colocate them as `*.test.ts` or `*.test.tsx` near the code under test and add the runner to `package.json`.
+No automated test framework or coverage threshold is currently configured. Treat `npm run build` as the required pre-commit check. Manually verify changed routes at mobile and desktop widths, keyboard interaction, external links, base-path navigation, and PDFs. If tests are introduced, colocate them as `*.test.ts` or `*.test.tsx` near the code under test and add the runner to `package.json`.
 
 ## Commit & Pull Request Guidelines
 

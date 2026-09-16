@@ -180,12 +180,6 @@ export const certificateGroups = [
   },
 ] satisfies ReadonlyArray<CertificateGroup>;
 
-export type ProjectDemo = Readonly<{
-  href: string;
-  videoSrc: string;
-  posterSrc: string;
-}>;
-
 export type Project = Readonly<{
   slug: string;
   title: string;
@@ -193,7 +187,6 @@ export type Project = Readonly<{
   description: string;
   tags: ReadonlyArray<string>;
   repoHref: string;
-  demo?: ProjectDemo;
 }>;
 
 export const projects = [
@@ -224,17 +217,5 @@ export const projects = [
 ] satisfies ReadonlyArray<Project>;
 
 export function getProjectPrimaryHref(project: Project) {
-  return project.demo?.href ?? project.repoHref;
-}
-
-export function hasProjectDemo(project: Project): project is Project & { demo: ProjectDemo } {
-  return Boolean(project.demo);
-}
-
-export function getProjectBySlug(slug: string) {
-  return projects.find((project) => project.slug === slug);
-}
-
-export function getProjectDemoParams() {
-  return projects.filter(hasProjectDemo).map((project) => ({ slug: project.slug }));
+  return project.repoHref;
 }
