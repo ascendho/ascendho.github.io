@@ -329,7 +329,9 @@ a {
   --text-muted: var(--certificate-muted);
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 56px 24px 80px;
+  padding-inline: max(24px, env(safe-area-inset-left), env(safe-area-inset-right));
+  padding-top: 56px;
+  padding-bottom: max(80px, env(safe-area-inset-bottom));
   background: var(--certificate-background);
 }
 
@@ -777,7 +779,10 @@ a {
 @media (max-width: 880px) {
   .home-content {
     width: auto;
-    margin: 48px 24px 64px;
+    margin-top: 48px;
+    margin-bottom: 64px;
+    margin-left: max(24px, env(safe-area-inset-left));
+    margin-right: max(24px, env(safe-area-inset-right));
   }
 
   .home-intro {
@@ -804,29 +809,14 @@ a {
     border-radius: 16px;
   }
 
-  .demo-container {
-    padding: 40px 24px 56px;
-  }
-
   .certificates-container {
-    padding: 40px 24px 64px;
+    padding-top: 40px;
+    padding-bottom: max(64px, env(safe-area-inset-bottom));
+    padding-inline: max(24px, env(safe-area-inset-left), env(safe-area-inset-right));
   }
 
   .certificates-header {
     margin-top: 36px;
-  }
-
-  .demo-header {
-    margin-top: 36px;
-  }
-
-  .demo-title {
-    font-size: 34px;
-  }
-
-  .demo-player {
-    margin-top: 36px;
-    border-radius: 12px;
   }
 }
 
@@ -901,16 +891,83 @@ a {
   .certificate-preview-link {
     padding: 10px;
   }
+}
 
-  .demo-title {
-    font-size: 30px;
+@media (max-width: 380px) {
+  .home-content {
+    margin-left: max(18px, env(safe-area-inset-left));
+    margin-right: max(18px, env(safe-area-inset-right));
+  }
+
+  .home-terminal {
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .home-work-title {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .home-personal-links {
+    row-gap: 10px;
+  }
+
+  .home-link-group-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .home-link-group-links {
+    gap: 6px 12px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .certificates-container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .certificates-title-row h1 {
+    font-size: 27px;
+  }
+
+  .certificate-list-meta h3 {
+    font-size: 17px;
+    line-height: 26px;
+  }
+}
+
+@media (pointer: coarse) {
+  .home-works-links {
+    row-gap: 8px;
+  }
+
+  .home-works-links a {
+    min-height: 44px;
+  }
+
+  .page-back-link {
+    min-height: 44px;
+  }
+
+  .home-personal-link {
+    min-height: 44px;
+  }
+
+  .certificate-list-verify {
+    min-height: 44px;
+  }
+
+  .certificate-actions a {
+    min-height: 44px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .home-content,
-  .certificates-content,
-  .demo-content {
+  .certificates-content {
     opacity: 1;
     transform: none;
     animation: none;

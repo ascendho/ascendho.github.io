@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 
 import { withBasePath } from "@/lib/site-data";
@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     icon: withBasePath("/favicon.svg"),
     shortcut: withBasePath("/favicon.svg"),
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light",
+  themeColor: "#fafafa",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
