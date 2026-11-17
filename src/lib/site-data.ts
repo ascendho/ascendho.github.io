@@ -23,11 +23,11 @@ export const profile = {
     "一名专注于 AI Agent 与 LLM 工程的开发者，现阶段主要实践大模型部署、推理优化、模型微调、智能体开发与 Skills 编写。",
   showWorks: true,
   focus:
-    "目前正积极备战并参与 2027 秋招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
+    "目前正积极备战并参与 2027 春招，求职方向以 LLM 与 Agent 为主，也非常关注软硬件结合及工业 AI 相关机会。",
   internship: {
-    companyZh: "知道创宇",
+    companyZh: "联想",
     role: "AI 研发实习生",
-    href: "https://www.knownsec.com/",
+    href: "https://www.lenovo.com.cn/",
   },
   avatarSrc: withBasePath("/images/profile/avatar.jpg"),
   avatarSrcSet: [
@@ -203,13 +203,6 @@ export const projects = [
       "本地 VS Code 扩展，在项目文件夹改名或移动后，仍可将 Codex、Cursor Agent CLI 与 OpenCode 会话重新连接到项目。",
     tags: ["TypeScript", "VS Code", "Codex", "Cursor", "OpenCode"],
     repoHref: "https://github.com/ascendho/ChatAnchor",
-  },
-  {
-    slug: "ledger-x",
-    title: "Ledger-X",
-    description: "TODO: 项目描述待补充",
-    tags: ["TODO"],
-    repoHref: "https://github.com/ascendho/Ledger-X",
   },
   {
     slug: "lumisense",
