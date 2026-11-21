@@ -17,8 +17,8 @@ export function withBasePath(path: string) {
 }
 
 export const profile = {
-  terminalUser: "shea",
-  displayName: "Shea",
+  terminalUser: "ascendho",
+  displayName: "ascendho",
   identity:
     "一名专注于 AI Agent 与 LLM 工程的开发者，现阶段主要实践大模型部署、推理优化、模型微调、智能体开发与 Skills 编写。",
   showWorks: true,

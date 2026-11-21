@@ -4,8 +4,8 @@ import { ArrowLeft, BadgeCheck, FileDown } from "lucide-react";
 import { certificateGroups, withBasePath, type Certificate } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "MOOC 认证 | Shea",
-  description: "Shea 的 MOOC 学习与认证记录，提供证书原件、课程完成记录与在线核验链接。",
+  title: "MOOC 认证 | ascendho",
+  description: "ascendho 的 MOOC 学习与认证记录，提供证书原件、课程完成记录与在线核验链接。",
 };
 
 function formatIssuedAt(issuedAt: string) {

@@ -7,7 +7,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-Shea 的个人主页，聚焦 AI Agent 与 LLM 工程，展示项目、MOOC 认证与简历。
+ascendho 的个人主页，聚焦 AI Agent 与 LLM 工程，展示项目、MOOC 认证与简历。
 
 在线访问：<https://www.ascendho.live/>
 
