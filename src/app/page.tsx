@@ -44,8 +44,7 @@ export default function Home() {
                 {profile.terminalUser}@localhost:~ $ whoami
               </code>
               <div className="home-identity">
-                <h1 id="home-title">{profile.displayName}</h1>
-                <span>，{profile.identity}</span>
+                <h1 id="home-title">{profile.identity}</h1>
               </div>
             </div>
 
